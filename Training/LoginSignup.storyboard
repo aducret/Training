@@ -7,7 +7,7 @@
         <!--Login View Controller-->
         <scene sceneID="5dC-SN-TO8">
             <objects>
-                <viewController id="TUc-HJ-15S" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="TUc-HJ-15S" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y93-II-SpX"/>
                         <viewControllerLayoutGuide type="bottom" id="DHN-ls-hiF"/>
@@ -58,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-eW-WMg">
-                                <rect key="frame" x="197" y="111" width="210" height="150"/>
+                                <rect key="frame" x="195" y="111" width="210" height="150"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,7 +83,7 @@
                             <constraint firstAttribute="bottom" secondItem="vcI-Fx-sde" secondAttribute="bottom" constant="285" id="qxL-d6-UfS"/>
                             <constraint firstAttribute="centerX" secondItem="vcI-Fx-sde" secondAttribute="centerX" id="se4-OA-AFx"/>
                             <constraint firstAttribute="bottom" secondItem="arn-Zn-0V6" secondAttribute="bottom" constant="198" id="uPf-2D-Heb"/>
-                            <constraint firstAttribute="centerX" secondItem="VmH-eW-WMg" secondAttribute="centerX" constant="-2" id="z42-dU-mZ3"/>
+                            <constraint firstAttribute="centerX" secondItem="VmH-eW-WMg" secondAttribute="centerX" id="z42-dU-mZ3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fG0-jD-wq5"/>

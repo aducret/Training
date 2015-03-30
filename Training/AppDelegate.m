@@ -24,7 +24,20 @@
     // Initialize Parse.
     [Parse setApplicationId:@"G6OmtROOQOtS3AyvUpuhU26M9vVZD4G1R9hhf11f"
                   clientKey:@"42b5qJ8m0kFyqksuOt5boqyi3jc5h0c7RBe1naNh"];
-
+    
+    //Setting Storyboard
+    PFUser *currentUser = [PFUser currentUser];
+    
+    if(currentUser){
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle: NULL] instantiateViewControllerWithIdentifier: @"mainViewController"];
+    }else{
+        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.window.rootViewController = [[UIStoryboard storyboardWithName:@"LoginSignup" bundle: NULL] instantiateViewControllerWithIdentifier: @"LoginViewController"];
+    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
