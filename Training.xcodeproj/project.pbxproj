@@ -160,13 +160,6 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		4683FD691AC982A7008891AD /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		46C2AB551AC338B2001B1A3D = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +203,6 @@
 		46C2AB611AC338B2001B1A3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4683FD691AC982A7008891AD /* Images */,
 				46C2AB621AC338B2001B1A3D /* Info.plist */,
 				46C2AB631AC338B2001B1A3D /* main.m */,
 				46E665D91AC5EC2000786C74 /* Localizable.strings */,

@@ -29,8 +29,7 @@
 
 - (void)viewDidLoad {
     //[self.frontImage setImage:];
-    [self.logoImage setImage: [UIImage imageNamed:@"header_logo"]];
-    self.logoImage.contentMode = UIViewContentModeScaleAspectFit;
+    //[self.logoImage setImage: [UIImage imageNamed:@"login_logo"]];
     [self.emailTextField setPlaceholder: NSLocalizedString(@"email", nil)];
     [self.passwordTextField setPlaceholder: NSLocalizedString(@"password", nil)];
     [self.logInButton setTitle: NSLocalizedString(@"logIn", nil) forState:(UIControlStateNormal)];
@@ -89,6 +88,10 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", emailRegex];
     
     return [emailTest evaluateWithObject:candidate];
+}
+
+-(void)unWindSegue:(UIStoryboardSegue *)sender{
+    
 }
 
 @end
