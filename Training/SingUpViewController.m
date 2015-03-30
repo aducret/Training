@@ -11,6 +11,31 @@
 
 @implementation SingUpViewController
 
+
+- (void)viewDidLoad{
+    [self.emailTextField setPlaceholder: NSLocalizedString(@"email", nil)];
+    [self.passwordTextField setPlaceholder: NSLocalizedString(@"password", nil)];
+    [self.confirmPasswordTextField setPlaceholder: NSLocalizedString(@"confirmPassword", nil)];
+    
+    //Setting termsAnsConditionsLabel
+    NSString *termsAndConditionsWrapper = [[NSString alloc] initWithString: NSLocalizedString(@"termsAndConditionsWrapper", nil)];
+    NSString *termsAndConditions = [[NSString alloc] initWithString:NSLocalizedString(@"termsAndConditions", nil)];
+    NSString *text = [NSString stringWithFormat:@"%@ %@",termsAndConditionsWrapper, termsAndConditions ];
+    
+    NSDictionary *attribs = @{
+                              NSStrokeColorAttributeName: [UIColor redColor]
+                              };
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text attributes:attribs];
+    
+    NSRange range = [text rangeOfString: termsAndConditions];
+    [attributedText setAttributes:@{ NSLinkAttributeName: @"www.wolox.com.ar" } range:range];
+    
+    self.termsAndConditionsLabel.attributedText = attributedText;
+
+    //Setting singupButton
+    [self.singupButton setTitle: NSLocalizedString(@"join", nil) forState:UIControlStateNormal];
+}
+
 - (IBAction)singUp:(id)sender {
     
     if(self.emailTextField.text.length > 0 && self.passwordTextField.text.length > 0 && self.confirmPasswordTextField.text.length > 0){
