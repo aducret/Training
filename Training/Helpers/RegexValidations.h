@@ -8,8 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RegexValidations : NSObject
-
-+ (BOOL) validateEmail: (NSString *) candidate;
-
-@end
+BOOL ValidateEmail(NSString * email);
