@@ -8,7 +8,8 @@
 "logIn"                         =       "Log In";
 "singUp"                        =       "Sing Up";
 "join"                          =       "Join";
-"allRequired"                   =       "All the fields are required";
+"missingEmail"                  =       "The email field is required";
+"missingPassword"               =       "The password field is required";
 "invalidEmail"                  =       "The input email is invalid";
 "invalidLogIn"                  =       "The email or password are invalid";
 "passwordsDoNotMatch"           =       "Passwords do not match";
