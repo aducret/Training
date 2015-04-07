@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginViewModel.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<LogInViewModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *frontImage;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
@@ -18,6 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *singUpButton;
 @property (weak, nonatomic) IBOutlet UILabel *termsAndConditionsLabel;
 
-- (IBAction)unWindSegue:(UIStoryboardSegue *)sender;
+@property LoginViewModel *logInViewModel;
+
+- (IBAction)logIn:(id)sender;
+
+- (IBAction)signUp:(id)sender;
 
 @end

@@ -7,13 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SignUpViewModel.h"
 
-@interface SingUpViewController : UIViewController
+@interface SignUpViewController : UIViewController<SignUpViewModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *termsAndConditionsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *singupButton;
+
+@property (nonatomic) SignUpViewModel * signUpViewModel;
+
+- (instancetype)initWithViewModel:(SignUpViewModel *)viewModel;
+
+- (IBAction)cancel:(id)sender;
 
 @end

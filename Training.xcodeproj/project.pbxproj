@@ -11,6 +11,7 @@
 		462891741AC48A040080653B /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462891731AC48A040080653B /* LoginSignup.storyboard */; };
 		4683FD8D1AC9A40F008891AD /* RegexValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4683FD8C1AC9A40F008891AD /* RegexValidations.m */; };
 		46A6B0F91AD413A300DE0BB6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A6B0F81AD413A300DE0BB6 /* MainViewController.m */; };
+		46A6B1021AD43D9F00DE0BB6 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A6B1011AD43D9F00DE0BB6 /* MainViewModel.m */; };
 		46ABB0B91AC5C514007CC86D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ABB0B81AC5C514007CC86D /* LoginViewController.m */; };
 		46ABB0BF1AC5D330007CC86D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46ABB0BD1AC5D330007CC86D /* Bolts.framework */; };
 		46ABB0C01AC5D330007CC86D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46ABB0BE1AC5D330007CC86D /* Parse.framework */; };
@@ -64,6 +65,8 @@
 		4683FD8C1AC9A40F008891AD /* RegexValidations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexValidations.m; path = Helpers/RegexValidations.m; sourceTree = "<group>"; };
 		46A6B0F71AD413A300DE0BB6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		46A6B0F81AD413A300DE0BB6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		46A6B1001AD43D9F00DE0BB6 /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
+		46A6B1011AD43D9F00DE0BB6 /* MainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
 		46ABB0B71AC5C514007CC86D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		46ABB0B81AC5C514007CC86D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		46ABB0BD1AC5D330007CC86D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				46B4D7FE1ACC1923006EE3D1 /* SignUpViewModel.m */,
 				46B4D8031ACC7E0F006EE3D1 /* ApplicationViewModel.h */,
 				46B4D8041ACC7E0F006EE3D1 /* ApplicationViewModel.m */,
+				46A6B1001AD43D9F00DE0BB6 /* MainViewModel.h */,
+				46A6B1011AD43D9F00DE0BB6 /* MainViewModel.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 				46C2AB6D1AC338B2001B1A3D /* SecondViewController.m in Sources */,
 				46B4D8021ACC751A006EE3D1 /* ParseBootstrapper.m in Sources */,
 				46B4D8051ACC7E0F006EE3D1 /* ApplicationViewModel.m in Sources */,
+				46A6B1021AD43D9F00DE0BB6 /* MainViewModel.m in Sources */,
 				46E665D41AC5E14F00786C74 /* SignUpViewController.m in Sources */,
 				4683FD8D1AC9A40F008891AD /* RegexValidations.m in Sources */,
 				46A6B0F91AD413A300DE0BB6 /* MainViewController.m in Sources */,
