@@ -66,6 +66,7 @@
 - (void)initializeUI {
     self.emailTextField.placeholder = NSLocalizedString(@"email", nil);
     [self.singupButton setTitle: NSLocalizedString(@"join", nil) forState:UIControlStateNormal];
+    self.navBar.topItem.title = NSLocalizedString(@"wolox", nil);
     [self initializeTermsAndConditionsLabel];
     [self initializePasswordTextField];
     [self initializeConfirmPasswordTextField];

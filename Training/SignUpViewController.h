@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *termsAndConditionsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *singupButton;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @property (nonatomic) SignUpViewModel * signUpViewModel;
 

@@ -13,3 +13,4 @@
 "invalidEmail"                  =       "The input email is invalid";
 "invalidLogIn"                  =       "The email or password are invalid";
 "passwordsDoNotMatch"           =       "Passwords do not match";
+"wolox"                         =       "Wolox";
