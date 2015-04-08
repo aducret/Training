@@ -12,8 +12,10 @@
 extern NSString * const SignUpViewModelErrorDomain;
 
 typedef enum : NSUInteger {
+    SignupViewModelErrorAllFieldsRequired,
     SignupViewModelErrorMissingEmail,
     SignupViewModelErrorMissingPassword,
+    SignupViewModelErrorMissingConfirmationPassword,
     SignupViewModelErrorPassswordDoesNotMatch,
     SignupViewModelErrorInvalidEmail
 } SignupViewModelError;

@@ -13,6 +13,7 @@
 extern NSString * const LogInViewModelErrorDomain;
 
 typedef enum : NSUInteger {
+    LogInViewModelErrorAllFieldsRequired,
     LogInViewModelErrorMissingEmail,
     LogInViewModelErrorMissingPassword,
     LogInViewModelErrorInvalidEmail

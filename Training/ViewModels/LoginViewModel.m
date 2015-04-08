@@ -47,10 +47,11 @@ NSString * const LogInViewModelErrorDomain = @"com.wolox.training.LogInViewModel
 - (BOOL)validateCredentials:(NSError **)error{
     *error = nil;
     NSDictionary * userInfo;
-    if (self.email == nil || self.email.length == 0) {
-        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingEmail", nil)};
+    
+    if (![self validatePasswordLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingPassword", nil)};
         *error = [NSError errorWithDomain:LogInViewModelErrorDomain
-                                     code:LogInViewModelErrorMissingEmail
+                                     code:LogInViewModelErrorMissingPassword
                                  userInfo:userInfo];
     }
     
@@ -58,16 +59,36 @@ NSString * const LogInViewModelErrorDomain = @"com.wolox.training.LogInViewModel
         userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"invalidEmail", nil)};
         *error = [NSError errorWithDomain:LogInViewModelErrorDomain
                                      code:LogInViewModelErrorInvalidEmail
-                                 userInfo:userInfo]; 
+                                 userInfo:userInfo];
     }
     
-    if (self.password == nil || self.password.length == 0) {
-        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingPassword", nil)};
+    if (![self validateEmailLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingEmail", nil)};
         *error = [NSError errorWithDomain:LogInViewModelErrorDomain
-                                     code:LogInViewModelErrorMissingPassword
+                                     code:LogInViewModelErrorMissingEmail
+                                 userInfo:userInfo];
+    }
+    
+    if (![self validateAllFieldsLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"allFieldsRequired", nil)};
+        *error = [NSError errorWithDomain:LogInViewModelErrorDomain
+                                     code:LogInViewModelErrorAllFieldsRequired
                                  userInfo:userInfo];
     }
     
     return *error == nil;
 }
+
+- (BOOL)validateEmailLength {
+    return self.email != nil && self.email.length != 0;
+}
+
+- (BOOL)validatePasswordLength {
+    return self.password != nil && self.password.length != 0;
+}
+
+- (BOOL)validateAllFieldsLength {
+    return [self validateEmailLength] && [self validatePasswordLength];
+}
+
 @end

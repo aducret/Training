@@ -62,7 +62,9 @@
                                          instantiateViewControllerWithIdentifier: @"SignUpViewController"];
     controller.signUpViewModel = signUpViewModel;
     signUpViewModel.delegate = controller;
-    [self presentViewController:controller animated:YES completion:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 #pragma mark - Private methods

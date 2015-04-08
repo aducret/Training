@@ -14,3 +14,5 @@
 "invalidLogIn"                  =       "The email or password are invalid";
 "passwordsDoNotMatch"           =       "Passwords do not match";
 "wolox"                         =       "Wolox";
+"missingConfirmationPassword"   =       "The confirmation password field is required";
+"allFieldsRequired"             =       "All fields are required";

@@ -61,10 +61,25 @@ NSString * const SignUpViewModelErrorDomain = @"com.wolox.training.SignUpViewMod
 - (BOOL)validateCredentials:(NSError **)error {
     *error = nil;
     NSDictionary * userInfo;
-    if (self.email == nil || self.email.length == 0) {
-        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingEmail", nil)};
+    
+    if (![self.password isEqualToString: self.confirmationPassword]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"passwordsDoNotMatch", nil)};
         *error = [NSError errorWithDomain:SignUpViewModelErrorDomain
-                                     code:SignupViewModelErrorMissingEmail
+                                     code:SignupViewModelErrorPassswordDoesNotMatch
+                                 userInfo:userInfo];
+    }
+    
+    if (![self validateConfirmationPasswordLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingConfirmationPassword", nil)};
+        *error = [NSError errorWithDomain:SignUpViewModelErrorDomain
+                                     code:SignupViewModelErrorMissingConfirmationPassword
+                                 userInfo:userInfo];
+    }
+    
+    if (![self validatePasswordLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingPassword", nil)};
+        *error = [NSError errorWithDomain:SignUpViewModelErrorDomain
+                                     code:SignupViewModelErrorMissingPassword
                                  userInfo:userInfo];
     }
     
@@ -75,21 +90,37 @@ NSString * const SignUpViewModelErrorDomain = @"com.wolox.training.SignUpViewMod
                                  userInfo:userInfo];
     }
     
-    if (self.password == nil || self.password.length == 0) {
-        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingPassword", nil)};
+    if (![self validateEmailLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"missingEmail", nil)};
         *error = [NSError errorWithDomain:SignUpViewModelErrorDomain
-                                     code:SignupViewModelErrorMissingPassword
+                                     code:SignupViewModelErrorMissingEmail
                                  userInfo:userInfo];
     }
     
-    if (![self.password isEqualToString:self.confirmationPassword]) {
-        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"passwordsDoNotMatch", nil)};
+    if (![self validateAllFieldsLength]) {
+        userInfo = @{NSLocalizedDescriptionKey : NSLocalizedString(@"allFieldsRequired", nil)};
         *error = [NSError errorWithDomain:SignUpViewModelErrorDomain
-                                     code:SignupViewModelErrorPassswordDoesNotMatch
+                                     code:SignupViewModelErrorAllFieldsRequired
                                  userInfo:userInfo];
     }
     
     return *error == nil;
+}
+
+- (BOOL)validateEmailLength {
+    return self.email != nil && self.email.length != 0;
+}
+
+- (BOOL)validatePasswordLength {
+    return self.password != nil && self.password.length != 0;
+}
+
+- (BOOL)validateConfirmationPasswordLength {
+    return self.confirmationPassword != nil && self.confirmationPassword.length != 0;
+}
+
+- (BOOL)validateAllFieldsLength {
+    return [self validateEmailLength] && [self validatePasswordLength] && [self validateConfirmationPasswordLength];
 }
 
 @end

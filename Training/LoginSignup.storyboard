@@ -58,7 +58,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-eW-WMg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-eW-WMg">
                                 <rect key="frame" x="195" y="111" width="210" height="150"/>
                             </imageView>
                         </subviews>
@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="879" y="-47"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Title-->
         <scene sceneID="c40-v1-6u2">
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" id="eBo-jN-9Z6" customClass="SignUpViewController" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                         <viewControllerLayoutGuide type="bottom" id="53E-Bt-FNl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a0S-Ls-cPa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-d1-UU0">
@@ -144,21 +144,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4w-VE-5FB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Title" id="u6f-9V-XQG">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EDY-Ro-E43">
-                                            <connections>
-                                                <action selector="cancel:" destination="eBo-jN-9Z6" id="jVH-7f-kv9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -166,7 +151,6 @@
                             <constraint firstItem="4s7-8F-Tif" firstAttribute="leading" secondItem="a0S-Ls-cPa" secondAttribute="leading" constant="16" id="5NM-jd-4Un"/>
                             <constraint firstAttribute="centerX" secondItem="wlG-63-xKC" secondAttribute="centerX" id="Gqs-nr-T4T"/>
                             <constraint firstItem="eWu-d1-UU0" firstAttribute="leading" secondItem="a0S-Ls-cPa" secondAttribute="leading" constant="16" id="IoP-Bx-sqm"/>
-                            <constraint firstItem="g4w-VE-5FB" firstAttribute="top" secondItem="a0S-Ls-cPa" secondAttribute="top" id="Kgf-Wt-3o3"/>
                             <constraint firstItem="wlG-63-xKC" firstAttribute="leading" secondItem="a0S-Ls-cPa" secondAttribute="leading" constant="16" id="L5G-9V-59v"/>
                             <constraint firstItem="ykF-s4-PcN" firstAttribute="leading" secondItem="a0S-Ls-cPa" secondAttribute="leading" constant="16" id="Qbn-qF-knG"/>
                             <constraint firstItem="eWu-d1-UU0" firstAttribute="top" secondItem="a0S-Ls-cPa" secondAttribute="top" constant="133" id="USI-Ki-mQb"/>
@@ -176,16 +160,22 @@
                             <constraint firstItem="OQP-f4-eQT" firstAttribute="top" secondItem="a0S-Ls-cPa" secondAttribute="top" constant="72" id="cXz-aH-Wbb"/>
                             <constraint firstAttribute="centerX" secondItem="ykF-s4-PcN" secondAttribute="centerX" id="fNO-Li-a9A"/>
                             <constraint firstItem="OQP-f4-eQT" firstAttribute="leading" secondItem="a0S-Ls-cPa" secondAttribute="leading" constant="16" id="him-if-xHz"/>
-                            <constraint firstAttribute="centerX" secondItem="g4w-VE-5FB" secondAttribute="centerX" id="owS-SG-XRS"/>
                             <constraint firstItem="4s7-8F-Tif" firstAttribute="top" secondItem="a0S-Ls-cPa" secondAttribute="top" constant="259" id="seO-fg-OVL"/>
-                            <constraint firstItem="g4w-VE-5FB" firstAttribute="leading" secondItem="a0S-Ls-cPa" secondAttribute="leading" id="sp8-sP-gtn"/>
                             <constraint firstItem="wlG-63-xKC" firstAttribute="top" secondItem="a0S-Ls-cPa" secondAttribute="top" constant="313" id="wLN-OK-4xi"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="wpE-JF-2Mh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EDY-Ro-E43">
+                            <connections>
+                                <action selector="cancel:" destination="eBo-jN-9Z6" id="jVH-7f-kv9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="ykF-s4-PcN" id="hN3-xe-YLm"/>
                         <outlet property="emailTextField" destination="OQP-f4-eQT" id="gMa-EI-Z6Q"/>
-                        <outlet property="navBar" destination="g4w-VE-5FB" id="PEa-4b-npa"/>
                         <outlet property="passwordTextField" destination="eWu-d1-UU0" id="wHw-BJ-2PD"/>
                         <outlet property="singupButton" destination="wlG-63-xKC" id="nI3-mP-cJa"/>
                         <outlet property="termsAndConditionsLabel" destination="4s7-8F-Tif" id="L6m-d9-jL4"/>
