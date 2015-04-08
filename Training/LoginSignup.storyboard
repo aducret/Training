@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="879" y="-47"/>
         </scene>
-        <!--Title-->
+        <!--Wolox-->
         <scene sceneID="c40-v1-6u2">
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" id="eBo-jN-9Z6" customClass="SignUpViewController" sceneMemberID="viewController">
@@ -165,7 +165,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="wpE-JF-2Mh">
+                    <navigationItem key="navigationItem" title="Wolox" id="wpE-JF-2Mh">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EDY-Ro-E43">
                             <connections>
                                 <action selector="cancel:" destination="eBo-jN-9Z6" id="jVH-7f-kv9"/>
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93P-Ry-8vW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="-47"/>
+            <point key="canvasLocation" x="1503" y="-47"/>
         </scene>
     </scenes>
     <resources>

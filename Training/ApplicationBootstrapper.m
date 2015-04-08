@@ -50,6 +50,7 @@
 - (void)presentMainViewModel:(MainViewModel *)mainViewModel {
     self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle: NULL]
                                       instantiateViewControllerWithIdentifier: @"MainViewController"];
+    
 }
 
 @end
