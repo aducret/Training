@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Wolox. All rights reserved.
 //
 #import <Parse/Parse.h>
+#import <UIView+Toast.h>
 
 #import "NewsViewController.h"
 #import "Comment.h"
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.items = [[NSMutableArray alloc]init];
+    [self setEmptyList];
     [self loadInitData];
 }
 
@@ -40,13 +42,27 @@
         NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"TableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
     Comment * comment = [self.items objectAtIndex:indexPath.row];
     [self initCell:cell withComment:comment];
     
     return cell;
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)aScrollView
+                  willDecelerate:(BOOL)decelerate
+{
+    CGPoint offset = aScrollView.contentOffset;
+    CGRect bounds = aScrollView.bounds;
+    CGSize size = aScrollView.contentSize;
+    UIEdgeInsets inset = aScrollView.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float h = size.height;
+    
+    float reload_distance = 50;
+    if(y > h + reload_distance) {
+        [self launchReload];
+    }
+}
 #pragma mark - Private methods
 
 - (void) initCell: (TableCell *) cell withComment: (Comment *) comment {
@@ -57,16 +73,29 @@
 }
 
 - (void)loadInitData {
-    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
+    PFQuery * query = [PFQuery queryWithClassName:@"Comment"];
+    query.limit = 7;
+    query.skip = [self.items count];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
+        if (!error && objects.count > 0) {
             NSLog(@"Successfully retrieved %ld scores.", objects.count);
             [self.items addObjectsFromArray:objects];
+            self.tableView.backgroundView = nil;
             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
         } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            [self.view makeToast:NSLocalizedString(@"", nil)];
         }
     }];
+}
+
+- (void)setEmptyList {
+    UIImage * image = [UIImage imageNamed:@"first"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    self.tableView.backgroundView = imageView;
+}
+
+- (void)launchReload {
+    [self loadInitData];
 }
 
 @end

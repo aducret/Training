@@ -16,3 +16,4 @@
 "wolox"                         =       "Wolox";
 "missingConfirmationPassword"   =       "The confirmation password field is required";
 "allFieldsRequired"             =       "All fields are required";
+"serverError"                   =       "There was a problem with the server.";
