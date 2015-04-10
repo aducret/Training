@@ -10,6 +10,7 @@
 		42372BFA589DB9350A6430ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E21BA1AFA86E06373B3783A /* libPods.a */; };
 		462891741AC48A040080653B /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462891731AC48A040080653B /* LoginSignup.storyboard */; };
 		4683FD8D1AC9A40F008891AD /* RegexValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4683FD8C1AC9A40F008891AD /* RegexValidations.m */; };
+		468FDA571AD83DB200CD6606 /* CreateCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468FDA561AD83DB200CD6606 /* CreateCommentViewController.m */; };
 		46A6B0F91AD413A300DE0BB6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A6B0F81AD413A300DE0BB6 /* MainViewController.m */; };
 		46A6B1021AD43D9F00DE0BB6 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A6B1011AD43D9F00DE0BB6 /* MainViewModel.m */; };
 		46ABB0B91AC5C514007CC86D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ABB0B81AC5C514007CC86D /* LoginViewController.m */; };
@@ -67,6 +68,8 @@
 		462891731AC48A040080653B /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		4683FD8B1AC9A40F008891AD /* RegexValidations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexValidations.h; path = Helpers/RegexValidations.h; sourceTree = "<group>"; };
 		4683FD8C1AC9A40F008891AD /* RegexValidations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexValidations.m; path = Helpers/RegexValidations.m; sourceTree = "<group>"; };
+		468FDA551AD83DB200CD6606 /* CreateCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCommentViewController.h; sourceTree = "<group>"; };
+		468FDA561AD83DB200CD6606 /* CreateCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCommentViewController.m; sourceTree = "<group>"; };
 		46A6B0F71AD413A300DE0BB6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		46A6B0F81AD413A300DE0BB6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		46A6B1001AD43D9F00DE0BB6 /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				46E665D31AC5E14F00786C74 /* SignUpViewController.m */,
 				46A6B0F71AD413A300DE0BB6 /* MainViewController.h */,
 				46A6B0F81AD413A300DE0BB6 /* MainViewController.m */,
+				468FDA551AD83DB200CD6606 /* CreateCommentViewController.h */,
+				468FDA561AD83DB200CD6606 /* CreateCommentViewController.m */,
 				46B0D9291AD582AC00EE13E1 /* NewsViewController.h */,
 				46B0D92A1AD582AC00EE13E1 /* NewsViewController.m */,
 			);
@@ -476,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468FDA571AD83DB200CD6606 /* CreateCommentViewController.m in Sources */,
 				46C2AB6D1AC338B2001B1A3D /* SecondViewController.m in Sources */,
 				46B4D8021ACC751A006EE3D1 /* ParseBootstrapper.m in Sources */,
 				46B4D8051ACC7E0F006EE3D1 /* ApplicationViewModel.m in Sources */,
