@@ -6,13 +6,27 @@
 //  Copyright (c) 2015 Wolox. All rights reserved.
 //
 
-#import "CreateCommentViewController.h"
+#import <Parse/Parse.h>
+#import <UIView+Toast.h>
 
-@interface CreateCommentViewController ()
+#import "Comment.h"
+#import "CreateCommentViewController.h"
+#import "ParseSessionService.h"
+
+
+@interface CreateCommentViewController()
 
 @end
 
 @implementation CreateCommentViewController
+
+- (instancetype)initWithDelegate:(id<CreateCommentViewControllerProtocol>)delegate {
+    self = [super init];
+    if (self) {
+        _delegate = delegate;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,11 +38,39 @@
 }
 
 - (IBAction)saveComment:(id)sender {
-    
+    if ([self validateFilds]) {
+        Comment * comment = [[Comment alloc] initWithClassName:@"Comment"];
+        comment.text = self.descriptionTextField.text;
+        ParseSessionService * parseService = [[ParseSessionService alloc] init];
+        comment.email = parseService.currentUser.email;
+        comment.like = NO;
+        [comment saveEventually:^(BOOL succeded, NSError *error){
+            if (!succeded) {
+                [self.view makeToast:NSLocalizedString(@"serverError", nil)];
+            } else {
+                [self.delegate createCommentViewControllerCanceled: self];
+            }
+        }];
+    }
 }
 
 - (IBAction)cancel:(id)sender {
+    [self.delegate createCommentViewControllerCanceled:self];
+}
+
+#pragma mark - Private Methods
+
+- (BOOL)validateFilds {
+    if (self.descriptionTextField.text.length == 0) {
+        [self.view makeToast:NSLocalizedString(@"missingDescription", nil)];
+        return NO;
+    }
     
+    if (self.descriptionTextField == nil || self.descriptionTextField.text.length > 250) {
+        [self.view makeToast:NSLocalizedString(@"descriptionLengthError", nil)];
+        return NO;
+    }
+    return YES;
 }
 
 /*

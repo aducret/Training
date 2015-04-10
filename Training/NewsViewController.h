@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsViewController : UITableViewController<UIScrollViewDelegate>
+#import "CreateCommentViewController.h"
+
+@interface NewsViewController : UITableViewController<UIScrollViewDelegate, CreateCommentViewControllerProtocol>
 
 @end

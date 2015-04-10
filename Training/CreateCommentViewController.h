@@ -8,10 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class CreateCommentViewController;
+
+@protocol CreateCommentViewControllerProtocol <NSObject>
+
+- (void)createCommentViewControllerCanceled:(CreateCommentViewController *) viewController;
+
+@end
+
 @interface CreateCommentViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton * ImageButton;
-@property (weak, nonatomic) IBOutlet UITextField * titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField * descriptionTextField;
+
+@property (nonatomic, weak) id<CreateCommentViewControllerProtocol> delegate;
+
+- (instancetype)initWithDelegate:(id<CreateCommentViewControllerProtocol>)delegate;
 
 @end

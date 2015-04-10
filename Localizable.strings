@@ -17,3 +17,5 @@
 "missingConfirmationPassword"   =       "The confirmation password field is required";
 "allFieldsRequired"             =       "All fields are required";
 "serverError"                   =       "There was a problem with the server.";
+"descriptionLengthError"        =       "The length of the description field must be less than 60.";
+"missingDescription"            =       "The description field es required";

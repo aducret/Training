@@ -12,6 +12,7 @@
 #import "Comment.h"
 #import "TableCell.h"
 #import "NSDate+TimeAgo.h"
+#import "CreateCommentViewController.h"
 
 @interface NewsViewController ()
 
@@ -21,6 +22,11 @@
 @end
 
 @implementation NewsViewController
+
+- (void)createCommentViewControllerCanceled:(CreateCommentViewController *)viewController {
+    [self doRefresh];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,12 +75,24 @@
     }
 }
 
+- (IBAction)createComment:(id)sender {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CreateCommentViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"CreateCommentViewController"];
+    viewController.delegate = self;
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
 #pragma mark - Private methods
 
 - (void)refresh:(id)sender {
+    [self doRefresh];
+    [(UIRefreshControl *)sender endRefreshing];
+}
+
+- (void) doRefresh {
     [self.items removeAllObjects];
     [self loadData];
-    [(UIRefreshControl *)sender endRefreshing];
 }
 
 - (void) initCell: (TableCell *) cell withComment: (Comment *) comment andIndexPath:(NSIndexPath *)indexPath{

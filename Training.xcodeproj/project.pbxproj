@@ -38,7 +38,6 @@
 		46C2AB641AC338B2001B1A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB631AC338B2001B1A3D /* main.m */; };
 		46C2AB671AC338B2001B1A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB661AC338B2001B1A3D /* AppDelegate.m */; };
 		46C2AB6D1AC338B2001B1A3D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB6C1AC338B2001B1A3D /* SecondViewController.m */; };
-		46C2AB701AC338B2001B1A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C2AB6E1AC338B2001B1A3D /* Main.storyboard */; };
 		46C2AB721AC338B2001B1A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C2AB711AC338B2001B1A3D /* Images.xcassets */; };
 		46C2AB751AC338B2001B1A3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46C2AB731AC338B2001B1A3D /* LaunchScreen.xib */; };
 		46C2AB811AC338B2001B1A3D /* TrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB801AC338B2001B1A3D /* TrainingTests.m */; };
@@ -49,6 +48,7 @@
 		46FAE38B1AD593E20022FF4F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAE38A1AD593E20022FF4F /* Comment.m */; };
 		46FAE3911AD59CCA0022FF4F /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FAE3901AD59CCA0022FF4F /* TableCell.xib */; };
 		46FAE3941AD5A05F0022FF4F /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAE3931AD5A05F0022FF4F /* TableCell.m */; };
+		46FB15831AD864BC00CF7D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FB15811AD864BC00CF7D0D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +113,6 @@
 		46C2AB661AC338B2001B1A3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		46C2AB6B1AC338B2001B1A3D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		46C2AB6C1AC338B2001B1A3D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		46C2AB6F1AC338B2001B1A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C2AB711AC338B2001B1A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46C2AB741AC338B2001B1A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		46C2AB7A1AC338B2001B1A3D /* TrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +128,7 @@
 		46FAE3901AD59CCA0022FF4F /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableCell.xib; path = Table/TableCell.xib; sourceTree = "<group>"; };
 		46FAE3921AD5A05F0022FF4F /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		46FAE3931AD5A05F0022FF4F /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
+		46FB15821AD864BC00CF7D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,10 +183,10 @@
 				46E665D31AC5E14F00786C74 /* SignUpViewController.m */,
 				46A6B0F71AD413A300DE0BB6 /* MainViewController.h */,
 				46A6B0F81AD413A300DE0BB6 /* MainViewController.m */,
-				468FDA551AD83DB200CD6606 /* CreateCommentViewController.h */,
-				468FDA561AD83DB200CD6606 /* CreateCommentViewController.m */,
 				46B0D9291AD582AC00EE13E1 /* NewsViewController.h */,
 				46B0D92A1AD582AC00EE13E1 /* NewsViewController.m */,
+				468FDA551AD83DB200CD6606 /* CreateCommentViewController.h */,
+				468FDA561AD83DB200CD6606 /* CreateCommentViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -264,8 +264,8 @@
 				46B4D80F1ACC82BD006EE3D1 /* ApplicationBootstrapper.m */,
 				46C2AB6B1AC338B2001B1A3D /* SecondViewController.h */,
 				46C2AB6C1AC338B2001B1A3D /* SecondViewController.m */,
-				46C2AB6E1AC338B2001B1A3D /* Main.storyboard */,
 				462891731AC48A040080653B /* LoginSignup.storyboard */,
+				46FB15811AD864BC00CF7D0D /* Main.storyboard */,
 				46C2AB711AC338B2001B1A3D /* Images.xcassets */,
 				46C2AB731AC338B2001B1A3D /* LaunchScreen.xib */,
 				46C2AB611AC338B2001B1A3D /* Supporting Files */,
@@ -427,8 +427,8 @@
 			files = (
 				46E665DA1AC5EC2000786C74 /* Localizable.strings in Resources */,
 				462891741AC48A040080653B /* LoginSignup.storyboard in Resources */,
-				46C2AB701AC338B2001B1A3D /* Main.storyboard in Resources */,
 				46C2AB751AC338B2001B1A3D /* LaunchScreen.xib in Resources */,
+				46FB15831AD864BC00CF7D0D /* Main.storyboard in Resources */,
 				46FAE3911AD59CCA0022FF4F /* TableCell.xib in Resources */,
 				46C2AB721AC338B2001B1A3D /* Images.xcassets in Resources */,
 			);
@@ -522,20 +522,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		46C2AB6E1AC338B2001B1A3D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				46C2AB6F1AC338B2001B1A3D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		46C2AB731AC338B2001B1A3D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				46C2AB741AC338B2001B1A3D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		46FB15811AD864BC00CF7D0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46FB15821AD864BC00CF7D0D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
