@@ -46,11 +46,10 @@
         NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"TableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    if([self.items count] > 0) {
+    if ([self.items count] > 0) {
         Comment * comment = [self.items objectAtIndex:indexPath.row];
         [self initCell:cell withComment:comment andIndexPath:indexPath];
     }
-    
     return cell;
 }
 
@@ -65,8 +64,8 @@
     float h = size.height;
     
     float reload_distance = 50;
-    if(y > h + reload_distance) {
-        [self launchReload];
+    if (y > h + reload_distance) {
+        [self loadData];
     }
 }
 
@@ -74,7 +73,7 @@
 
 - (void)refresh:(id)sender {
     [self.items removeAllObjects];
-    [self launchReload];
+    [self loadData];
     [(UIRefreshControl *)sender endRefreshing];
 }
 
@@ -86,7 +85,7 @@
 }
 
 -(void)initCellLikeButtonImageWith:(TableCell *)cell andComment:(Comment *)comment {
-    if(comment.like) {
+    if (comment.like) {
         [cell.likeButton setImage:[UIImage imageNamed:@"i-like-active"] forState:UIControlStateNormal];
     } else {
         [cell.likeButton setImage:[UIImage imageNamed:@"i-like-inactive"] forState:UIControlStateNormal];
@@ -108,7 +107,7 @@
     comment.like = !comment.like;
     [comment saveEventually:^(BOOL succeeded, NSError *error) {
         if (!succeeded) {
-            NSLog(@"error al guardar like");
+            [self.view makeToast:NSLocalizedString(@"serverError", nil)];
             comment.like = !comment.like;
         }
     }];
@@ -146,10 +145,6 @@
     UIImage * image = [UIImage imageNamed:@"i-error"];
     UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
     self.tableView.backgroundView = imageView;
-}
-
-- (void)launchReload {
-    [self loadData];
 }
 
 - (void)initRefreshControl {
