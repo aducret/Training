@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString * email;
 @property (nonatomic, strong) NSString * text;
-@property (nonatomic, strong) NSDate * creationDate;
+@property (nonatomic) BOOL like;
 
 + (NSString *)parseClassName;
 

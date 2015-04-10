@@ -18,9 +18,6 @@
                         <color key="textColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="i-like-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="RPm-aC-muG">
-                        <rect key="frame" x="330" y="37" width="32" height="32"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verificar que luego de cambiar la contraseña efectivamente se pueda ingresar a la plataforma con las nuevas credenciales" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3P-PK-unp">
                         <rect key="frame" x="87" y="29" width="230" height="42"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -37,15 +34,25 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBU-DI-LtI">
+                        <rect key="frame" x="334" y="36" width="28" height="28"/>
+                        <state key="normal" image="i-like-inactive">
+                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="imageTaped:" destination="8Ja-Gj-sKQ" eventType="touchUpInside" id="kbx-bX-ocs"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="IlR-iS-vob" id="M3s-eg-3cl"/>
                 <outlet property="emailLabel" destination="cTC-nS-hQE" id="lQb-ci-wwS"/>
-                <outlet property="likeImage" destination="RPm-aC-muG" id="H89-6d-Rg6"/>
+                <outlet property="likeButton" destination="NBU-DI-LtI" id="Sh6-yR-y9P"/>
                 <outlet property="textLabel" destination="p3P-PK-unp" id="4wZ-S6-NiM"/>
             </connections>
-            <point key="canvasLocation" x="828.5" y="429"/>
+            <point key="canvasLocation" x="828.5" y="423"/>
         </tableViewCell>
         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="4y1-XE-Czo">
             <rect key="frame" x="0.0" y="0.0" width="43" height="49"/>

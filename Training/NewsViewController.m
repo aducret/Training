@@ -16,6 +16,7 @@
 @interface NewsViewController ()
 
 @property (nonatomic) NSMutableArray * items;
+@property (nonatomic) NSNotificationCenter * notificationCenter;
 
 @end
 
@@ -27,6 +28,8 @@
     [self initItemsArray];
     [self setEmptyListImage];
     [self loadData];
+    self.notificationCenter = [NSNotificationCenter defaultCenter];
+    [self subcribeToLikeButton];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -45,7 +48,7 @@
     }
     if([self.items count] > 0) {
         Comment * comment = [self.items objectAtIndex:indexPath.row];
-        [self initCell:cell withComment:comment];
+        [self initCell:cell withComment:comment andIndexPath:indexPath];
     }
     
     return cell;
@@ -75,11 +78,44 @@
     [(UIRefreshControl *)sender endRefreshing];
 }
 
-- (void) initCell: (TableCell *) cell withComment: (Comment *) comment {
+- (void) initCell: (TableCell *) cell withComment: (Comment *) comment andIndexPath:(NSIndexPath *)indexPath{
     cell.textLabel.text = comment.text;
-    cell.likeImage.image = [UIImage imageNamed:@"i-like-inactive"];
     cell.emailLabel.text = comment.email;
-    cell.dateLabel.text = [comment.creationDate timeAgo];
+    cell.index = [[NSNumber alloc] initWithInteger:indexPath.row];
+    [self initCellLikeButtonImageWith:cell andComment: comment];
+}
+
+-(void)initCellLikeButtonImageWith:(TableCell *)cell andComment:(Comment *)comment {
+    if(comment.like) {
+        [cell.likeButton setImage:[UIImage imageNamed:@"i-like-active"] forState:UIControlStateNormal];
+    } else {
+        [cell.likeButton setImage:[UIImage imageNamed:@"i-like-inactive"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)subcribeToLikeButton {
+    [self.notificationCenter addObserver:self
+                                selector:@selector(likeTap:)
+                                    name:@"likeNewNotification" object:nil];
+}
+
+- (void)likeTap: (NSNotification *) notification {
+    NSNumber * index = [notification.userInfo objectForKey:@"index"];
+    if (![self validateIndex: index]) {
+        return;
+    }
+    Comment * comment = [self.items objectAtIndex:[index integerValue]];
+    comment.like = !comment.like;
+    [comment saveEventually:^(BOOL succeeded, NSError *error) {
+        if (!succeeded) {
+            NSLog(@"error al guardar like");
+            comment.like = !comment.like;
+        }
+    }];
+}
+
+- (BOOL)validateIndex: (NSNumber *)index {
+    return index > 0 || index <= [[NSNumber alloc] initWithInteger:[self.items count]];
 }
 
 - (void)loadData {
@@ -102,15 +138,14 @@
 
 - (void)setEmptyListImage {
     UIImage * image = [UIImage imageNamed:@"first"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
     self.tableView.backgroundView = imageView;
 }
 
 - (void)setServerErrorImage {
     UIImage * image = [UIImage imageNamed:@"i-error"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
     self.tableView.backgroundView = imageView;
-
 }
 
 - (void)launchReload {

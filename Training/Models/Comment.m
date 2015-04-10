@@ -14,7 +14,7 @@
 
 @dynamic email;
 @dynamic text;
-@dynamic creationDate;
+@dynamic like;
 
 + (void)load{
     [self registerSubclass];
