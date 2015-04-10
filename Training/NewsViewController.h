@@ -10,4 +10,6 @@
 
 @interface NewsViewController : UITableViewController<UIScrollViewDelegate>
 
+
+
 @end

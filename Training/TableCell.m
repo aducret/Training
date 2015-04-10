@@ -42,6 +42,10 @@
 
 - (void)sendLikeNewNotification {
     [self.notificationCenter postNotificationName:@"likeNewNotification" object:self
-                                         userInfo:@{@"index" : self.index}];
+                                         userInfo:@{@"index" : @(self.index)}];
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    return self;
 }
 @end

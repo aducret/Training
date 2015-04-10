@@ -7,7 +7,7 @@
         <!--Item 2-->
         <scene sceneID="v5L-Ml-Y2x">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="Ge9-58-Vsm" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="Ge9-58-Vsm" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GbM-iy-ccU"/>
                         <viewControllerLayoutGuide type="bottom" id="QP0-Fd-nOr"/>

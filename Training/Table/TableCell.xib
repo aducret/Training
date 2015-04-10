@@ -54,11 +54,6 @@
             </connections>
             <point key="canvasLocation" x="828.5" y="423"/>
         </tableViewCell>
-        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="4y1-XE-Czo">
-            <rect key="frame" x="0.0" y="0.0" width="43" height="49"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="628.5" y="462.5"/>
-        </imageView>
     </objects>
     <resources>
         <image name="i-like-inactive" width="28" height="28"/>

@@ -27,9 +27,20 @@
     [self initRefreshControl];
     [self initItemsArray];
     [self setEmptyListImage];
-    [self loadData];
+    
+    UINib * nib = [UINib nibWithNibName:@"TableCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"TableCell"];
+    
+    [self loadData:NO];
     self.notificationCenter = [NSNotificationCenter defaultCenter];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [self subcribeToLikeButton];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+     [self unsubcribeToLikeButton];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -41,21 +52,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TableCell * cell = (TableCell *)[tableView dequeueReusableCellWithIdentifier:@"TableCell"];
-    if (cell == nil) {
-        NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"TableCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    if ([self.items count] > 0) {
-        Comment * comment = [self.items objectAtIndex:indexPath.row];
-        [self initCell:cell withComment:comment andIndexPath:indexPath];
-    }
+    TableCell * cell = (TableCell *)[tableView dequeueReusableCellWithIdentifier:@"TableCell" forIndexPath:indexPath];
+    Comment * comment = [self.items objectAtIndex:indexPath.row];
+    [self initCell:cell withComment:comment andIndexPath:indexPath];
     return cell;
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)aScrollView
-                  willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)aScrollView willDecelerate:(BOOL)decelerate {
     CGPoint offset = aScrollView.contentOffset;
     CGRect bounds = aScrollView.bounds;
     CGSize size = aScrollView.contentSize;
@@ -65,37 +68,42 @@
     
     float reload_distance = 50;
     if (y > h + reload_distance) {
-        [self loadData];
+        [self loadData: NO];
     }
 }
+
+
 
 #pragma mark - Private methods
 
 - (void)refresh:(id)sender {
-    [self.items removeAllObjects];
-    [self loadData];
-    [(UIRefreshControl *)sender endRefreshing];
+    [self loadData:YES];
+    [self.refreshControl endRefreshing];
 }
 
 - (void) initCell: (TableCell *) cell withComment: (Comment *) comment andIndexPath:(NSIndexPath *)indexPath{
     cell.textLabel.text = comment.text;
     cell.emailLabel.text = comment.email;
-    cell.index = [[NSNumber alloc] initWithInteger:indexPath.row];
+    cell.index = indexPath.row;
+    cell.dateLabel.text = [comment.createdAt timeAgoSimple];
     [self initCellLikeButtonImageWith:cell andComment: comment];
 }
 
 -(void)initCellLikeButtonImageWith:(TableCell *)cell andComment:(Comment *)comment {
-    if (comment.like) {
-        [cell.likeButton setImage:[UIImage imageNamed:@"i-like-active"] forState:UIControlStateNormal];
-    } else {
-        [cell.likeButton setImage:[UIImage imageNamed:@"i-like-inactive"] forState:UIControlStateNormal];
-    }
+    NSString * imageName = (comment.like) ? @"i-like-active" : @"i-like-inactive";
+    [cell.likeButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }
 
 - (void)subcribeToLikeButton {
     [self.notificationCenter addObserver:self
                                 selector:@selector(likeTap:)
                                     name:@"likeNewNotification" object:nil];
+}
+
+- (void)unsubcribeToLikeButton {
+    [self.notificationCenter removeObserver:self
+                                       name:@"likeNewNotification"
+                                     object:nil];
 }
 
 - (void)likeTap: (NSNotification *) notification {
@@ -114,17 +122,25 @@
 }
 
 - (BOOL)validateIndex: (NSNumber *)index {
-    return index > 0 || index <= [[NSNumber alloc] initWithInteger:[self.items count]];
+    NSNumber * count = @(self.items.count);
+    return index > 0 || index <= count;
 }
 
-- (void)loadData {
+- (void)loadData:(BOOL)removeAllItems {
     PFQuery * query = [PFQuery queryWithClassName:@"Comment"];
     query.limit = 7;
-    query.skip = [self.items count];
-    [query orderByDescending:@"creationDate"];
+    if (removeAllItems) {
+        query.skip = 0;
+    } else {
+        query.skip = [self.items count];
+    }
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error && objects.count > 0) {
             NSLog(@"Successfully retrieved %ld scores.", objects.count);
+            if (removeAllItems) {
+                [self.items removeAllObjects];
+            }
             [self.items addObjectsFromArray:objects];
             self.tableView.backgroundView = nil;
             [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
@@ -150,11 +166,13 @@
 - (void)initRefreshControl {
     UIRefreshControl * refresh = [[UIRefreshControl alloc] init];
     [refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    [self setRefreshControl:refresh];
+    self.refreshControl = refresh;
 }
 
 - (void)initItemsArray {
     self.items = [[NSMutableArray alloc]init];
 }
+
+
 
 @end

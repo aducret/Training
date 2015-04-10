@@ -10,12 +10,12 @@
 
 @interface TableCell : UITableViewCell
 
-@property (nonatomic) NSNumber * index;
+@property (nonatomic) NSUInteger index;
 
 @property (weak, nonatomic) IBOutlet UILabel * emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel * textLabel;
 @property (weak, nonatomic) IBOutlet UILabel * dateLabel;
-@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIButton * likeButton;
 
 @end
 
