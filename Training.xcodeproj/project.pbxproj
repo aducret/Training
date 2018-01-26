@@ -26,6 +26,8 @@
 		46ABB0D21AC5D3B6007CC86D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46ABB0D11AC5D3B6007CC86D /* SystemConfiguration.framework */; };
 		46ABB0D41AC5D3BF007CC86D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46ABB0D31AC5D3BF007CC86D /* libz.dylib */; };
 		46ABB0D61AC5D3C7007CC86D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46ABB0D51AC5D3C7007CC86D /* libsqlite3.dylib */; };
+		46B0D92B1AD582AC00EE13E1 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B0D92A1AD582AC00EE13E1 /* NewsViewController.m */; };
+		46B0D92E1AD5833D00EE13E1 /* NewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B0D92D1AD5833D00EE13E1 /* NewsViewModel.m */; };
 		46B4D7FB1ACC18C2006EE3D1 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D7FA1ACC18C2006EE3D1 /* LoginViewModel.m */; };
 		46B4D7FF1ACC1923006EE3D1 /* SignUpViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D7FE1ACC1923006EE3D1 /* SignUpViewModel.m */; };
 		46B4D8021ACC751A006EE3D1 /* ParseBootstrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D8011ACC751A006EE3D1 /* ParseBootstrapper.m */; };
@@ -34,7 +36,6 @@
 		46B4D8101ACC82BD006EE3D1 /* ApplicationBootstrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D80F1ACC82BD006EE3D1 /* ApplicationBootstrapper.m */; };
 		46C2AB641AC338B2001B1A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB631AC338B2001B1A3D /* main.m */; };
 		46C2AB671AC338B2001B1A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB661AC338B2001B1A3D /* AppDelegate.m */; };
-		46C2AB6A1AC338B2001B1A3D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB691AC338B2001B1A3D /* FirstViewController.m */; };
 		46C2AB6D1AC338B2001B1A3D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2AB6C1AC338B2001B1A3D /* SecondViewController.m */; };
 		46C2AB701AC338B2001B1A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C2AB6E1AC338B2001B1A3D /* Main.storyboard */; };
 		46C2AB721AC338B2001B1A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C2AB711AC338B2001B1A3D /* Images.xcassets */; };
@@ -44,6 +45,9 @@
 		46E665D11AC5D8D600786C74 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E665D01AC5D8D600786C74 /* Accounts.framework */; };
 		46E665D41AC5E14F00786C74 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E665D31AC5E14F00786C74 /* SignUpViewController.m */; };
 		46E665DA1AC5EC2000786C74 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46E665D91AC5EC2000786C74 /* Localizable.strings */; };
+		46FAE38B1AD593E20022FF4F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAE38A1AD593E20022FF4F /* Comment.m */; };
+		46FAE3911AD59CCA0022FF4F /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FAE3901AD59CCA0022FF4F /* TableCell.xib */; };
+		46FAE3941AD5A05F0022FF4F /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAE3931AD5A05F0022FF4F /* TableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		46ABB0D11AC5D3B6007CC86D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		46ABB0D31AC5D3BF007CC86D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		46ABB0D51AC5D3C7007CC86D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		46B0D9291AD582AC00EE13E1 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		46B0D92A1AD582AC00EE13E1 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		46B0D92C1AD5833D00EE13E1 /* NewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewModel.h; sourceTree = "<group>"; };
+		46B0D92D1AD5833D00EE13E1 /* NewsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewModel.m; sourceTree = "<group>"; };
 		46B4D7F91ACC18C2006EE3D1 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewModel.h; path = ViewModels/LoginViewModel.h; sourceTree = "<group>"; };
 		46B4D7FA1ACC18C2006EE3D1 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewModel.m; path = ViewModels/LoginViewModel.m; sourceTree = "<group>"; };
 		46B4D7FD1ACC1923006EE3D1 /* SignUpViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewModel.h; sourceTree = "<group>"; };
@@ -100,8 +108,6 @@
 		46C2AB631AC338B2001B1A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46C2AB651AC338B2001B1A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46C2AB661AC338B2001B1A3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		46C2AB681AC338B2001B1A3D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		46C2AB691AC338B2001B1A3D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		46C2AB6B1AC338B2001B1A3D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		46C2AB6C1AC338B2001B1A3D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		46C2AB6F1AC338B2001B1A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +121,11 @@
 		46E665D21AC5E14F00786C74 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		46E665D31AC5E14F00786C74 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		46E665D91AC5EC2000786C74 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
+		46FAE3891AD593E20022FF4F /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = Models/Comment.h; sourceTree = "<group>"; };
+		46FAE38A1AD593E20022FF4F /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = Models/Comment.m; sourceTree = "<group>"; };
+		46FAE3901AD59CCA0022FF4F /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableCell.xib; path = Table/TableCell.xib; sourceTree = "<group>"; };
+		46FAE3921AD5A05F0022FF4F /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		46FAE3931AD5A05F0022FF4F /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,13 +171,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		468040931AC4AB90009B45F0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		4680409A1AC4BA74009B45F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +180,8 @@
 				46E665D31AC5E14F00786C74 /* SignUpViewController.m */,
 				46A6B0F71AD413A300DE0BB6 /* MainViewController.h */,
 				46A6B0F81AD413A300DE0BB6 /* MainViewController.m */,
+				46B0D9291AD582AC00EE13E1 /* NewsViewController.h */,
+				46B0D92A1AD582AC00EE13E1 /* NewsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 				46B4D8041ACC7E0F006EE3D1 /* ApplicationViewModel.m */,
 				46A6B1001AD43D9F00DE0BB6 /* MainViewModel.h */,
 				46A6B1011AD43D9F00DE0BB6 /* MainViewModel.m */,
+				46B0D92C1AD5833D00EE13E1 /* NewsViewModel.h */,
+				46B0D92D1AD5833D00EE13E1 /* NewsViewModel.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -237,10 +245,11 @@
 		46C2AB601AC338B2001B1A3D /* Training */ = {
 			isa = PBXGroup;
 			children = (
+				46FAE38F1AD59CA20022FF4F /* Table */,
+				46FAE3881AD593BF0022FF4F /* Models */,
 				46B4D8091ACC80F8006EE3D1 /* Services */,
 				46B4D7FC1ACC18CE006EE3D1 /* ViewModels */,
 				4683FD8E1AC9A437008891AD /* Helpers */,
-				468040931AC4AB90009B45F0 /* Models */,
 				4680409A1AC4BA74009B45F0 /* ViewControllers */,
 				46B4D8001ACC751A006EE3D1 /* ParseBootstrapper.h */,
 				46B4D8011ACC751A006EE3D1 /* ParseBootstrapper.m */,
@@ -248,8 +257,6 @@
 				46C2AB661AC338B2001B1A3D /* AppDelegate.m */,
 				46B4D80E1ACC82BD006EE3D1 /* ApplicationBootstrapper.h */,
 				46B4D80F1ACC82BD006EE3D1 /* ApplicationBootstrapper.m */,
-				46C2AB681AC338B2001B1A3D /* FirstViewController.h */,
-				46C2AB691AC338B2001B1A3D /* FirstViewController.m */,
 				46C2AB6B1AC338B2001B1A3D /* SecondViewController.h */,
 				46C2AB6C1AC338B2001B1A3D /* SecondViewController.m */,
 				46C2AB6E1AC338B2001B1A3D /* Main.storyboard */,
@@ -286,6 +293,25 @@
 				46C2AB7F1AC338B2001B1A3D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46FAE3881AD593BF0022FF4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46FAE3891AD593E20022FF4F /* Comment.h */,
+				46FAE38A1AD593E20022FF4F /* Comment.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		46FAE38F1AD59CA20022FF4F /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				46FAE3901AD59CCA0022FF4F /* TableCell.xib */,
+				46FAE3921AD5A05F0022FF4F /* TableCell.h */,
+				46FAE3931AD5A05F0022FF4F /* TableCell.m */,
+			);
+			name = Table;
 			sourceTree = "<group>";
 		};
 		F3A9A19F66CAEB1BDE24DBD4 /* Frameworks */ = {
@@ -398,6 +424,7 @@
 				462891741AC48A040080653B /* LoginSignup.storyboard in Resources */,
 				46C2AB701AC338B2001B1A3D /* Main.storyboard in Resources */,
 				46C2AB751AC338B2001B1A3D /* LaunchScreen.xib in Resources */,
+				46FAE3911AD59CCA0022FF4F /* TableCell.xib in Resources */,
 				46C2AB721AC338B2001B1A3D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,13 +483,16 @@
 				46E665D41AC5E14F00786C74 /* SignUpViewController.m in Sources */,
 				4683FD8D1AC9A40F008891AD /* RegexValidations.m in Sources */,
 				46A6B0F91AD413A300DE0BB6 /* MainViewController.m in Sources */,
+				46FAE38B1AD593E20022FF4F /* Comment.m in Sources */,
 				46C2AB671AC338B2001B1A3D /* AppDelegate.m in Sources */,
 				46B4D7FB1ACC18C2006EE3D1 /* LoginViewModel.m in Sources */,
+				46B0D92B1AD582AC00EE13E1 /* NewsViewController.m in Sources */,
 				46B4D80D1ACC81CF006EE3D1 /* ParseSessionService.m in Sources */,
+				46FAE3941AD5A05F0022FF4F /* TableCell.m in Sources */,
 				46ABB0B91AC5C514007CC86D /* LoginViewController.m in Sources */,
 				46B4D7FF1ACC1923006EE3D1 /* SignUpViewModel.m in Sources */,
+				46B0D92E1AD5833D00EE13E1 /* NewsViewModel.m in Sources */,
 				46B4D8101ACC82BD006EE3D1 /* ApplicationBootstrapper.m in Sources */,
-				46C2AB6A1AC338B2001B1A3D /* FirstViewController.m in Sources */,
 				46C2AB641AC338B2001B1A3D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

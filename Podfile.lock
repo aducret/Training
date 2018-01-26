@@ -20,16 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - NSDate+TimeAgo (1.0.3)
   - ObjectiveSugar (0.9)
   - Toast (2.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - NSDate+TimeAgo
   - ObjectiveSugar (~> 0.5)
   - Toast (~> 2.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 10e85a00bb0f475124e4ff2677bf15693b2c1523
+  NSDate+TimeAgo: 416f55d2696d3744c313091c5a9280d47f8238fe
   ObjectiveSugar: 18409ee1ec578dd8598b55e5008f393488dca5cf
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
 

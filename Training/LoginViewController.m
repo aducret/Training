@@ -46,14 +46,14 @@
 
 #pragma mark - LogInViewModel delegate methods
 
-- (void)logInViewModel:(LoginViewModel *)viewModel didLogInUser:(PFUser *)user{
+- (void)logInViewModel:(LoginViewModel *)viewModel didLogInUser:(PFUser *)user {
+    
     MainViewController * controller = [[UIStoryboard storyboardWithName:@"Main" bundle: NULL]
                                         instantiateViewControllerWithIdentifier: @"MainViewController"];
     [self presentViewController:controller animated:YES completion:nil];
-
 }
 
-- (void)logInViewModel:(LoginViewModel *)viewModel failToLogIn:(NSError *)error{
+- (void)logInViewModel:(LoginViewModel *)viewModel failToLogIn:(NSError *)error {
     [self.view makeToast:error.localizedDescription];
 }
 
@@ -63,7 +63,7 @@
     controller.signUpViewModel = signUpViewModel;
     signUpViewModel.delegate = controller;
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [self presentViewController:navController animated:YES completion:nil];
 }
 
